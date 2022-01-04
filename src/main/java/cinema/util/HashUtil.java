@@ -16,8 +16,8 @@ public class HashUtil {
             MessageDigest messageDigest = MessageDigest.getInstance(HASH_ALGORITHM);
             messageDigest.update(salt);
             byte[] digest = messageDigest.digest(password.getBytes());
-            for (byte b : digest) {
-                hashedPwd.append(String.format("%02x", b));
+            for (byte element : digest) {
+                hashedPwd.append(String.format("%02x", element));
             }
             return hashedPwd.toString();
         } catch (NoSuchAlgorithmException e) {
