@@ -1,9 +1,9 @@
 package cinema.service;
 
-import cinema.model.Order;
-import cinema.model.ShoppingCart;
-import cinema.model.User;
 import java.util.List;
+import cinema.model.ShoppingCart;
+import cinema.model.Order;
+import cinema.model.User;
 
 public interface OrderService {
     Order completeOrder(ShoppingCart shoppingCart);
