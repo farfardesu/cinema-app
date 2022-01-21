@@ -2,6 +2,7 @@ package cinema.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +19,7 @@ public class Order {
     private Long id;
     @OneToMany
     private List<Ticket> tickets;
+    @Column(name = "order_time")
     private LocalDateTime orderTime;
     @ManyToOne
     private User user;
