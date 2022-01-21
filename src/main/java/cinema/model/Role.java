@@ -1,5 +1,6 @@
 package cinema.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -15,7 +16,8 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Enumerated(value = EnumType.STRING)
-    private RoleName roleName;
+    @Column(name = "name")
+    private RoleName name;
 
     public Long getId() {
         return id;
@@ -25,19 +27,19 @@ public class Role {
         this.id = id;
     }
 
-    public RoleName getRoleName() {
-        return roleName;
+    public RoleName getName() {
+        return name;
     }
 
-    public void setRoleName(RoleName name) {
-        this.roleName = name;
+    public void setName(RoleName name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Role{"
                 + "id=" + id
-                + ", roleName=" + roleName
+                + ", roleName=" + name
                 + '}';
     }
 
